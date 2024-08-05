@@ -33,8 +33,8 @@ const Banner = () => {
             <div className='max-w-[96%] md:max-w-[92%] mx-auto'>
                 <div className='flex justify-between'>
                     <div className='w-full md:text-start text-center mt-12 md:mt-0' >
-                        <span className='text-sm text-yellow-500'>HELLO!</span>
-                        <h1 className=' md:max-w-[50%] text-6xl mt-6 leading-tight font-extrabold'>I'm a <span className='text-yellow-500'>Web Developer</span> Based In Pakistan</h1>
+                        <span className='text-sm text-yellow-500 ml-1'>HELLO!</span>
+                        <h1 className=' md:max-w-[50%] text-6xl mt-6 leading-tight font-extrabold'>Fast, Reliable, and Secure <span className='text-yellow-500'>Web Solutions</span></h1>
                         <div className='flex items-center gap-2 mt-4 justify-center md:justify-start'>
                             <button className='text-sm text-black w-[110px] h-[50px] p-2 bg-yellow-500 rounded-3xl font-semibold'><Link href="/">Hire Me</Link></button>
                             <button className='text-sm text-white w-[130px] h-[50px] p-2 bg-transparent border border-white rounded-3xl' onClick={() => scroll("project")}><Link href="#project">My Work</Link></button>
