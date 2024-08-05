@@ -21,3 +21,7 @@ export interface Contact {
         detail: string
         link:string
 }
+export interface Menu {
+        name: string
+        url:string
+}

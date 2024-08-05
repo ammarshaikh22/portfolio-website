@@ -1,9 +1,34 @@
+"use client"
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import { services } from "@/data/data"
+import { menu } from "@/data/data";
 const Footer = () => {
+    const scroll = (targetId: any) => {
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
 
-    const menu = ["Home", "About", "Services", "Project", "Contact"];
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000;
+        let start: number | null = null;
+
+        const animateScroll = (timestamp: number) => {
+            if (start === null) start = timestamp;
+            const progress = timestamp - start;
+            const currentPosition = startPosition + (distance * progress) / duration;
+            window.scrollTo(0, currentPosition);
+
+            if (progress < duration) {
+                requestAnimationFrame(animateScroll);
+            } else {
+                window.scrollTo(0, targetPosition);
+            }
+        };
+
+        requestAnimationFrame(animateScroll);
+    };
     return (
         <footer className='relative py-24'>
             <div className='max-w-[92%] mx-auto'>
@@ -20,7 +45,7 @@ const Footer = () => {
                                     menu.map((curr, index) => {
                                         return (
                                             <li key={index}>
-                                                <Link href="/" className="text-gray-400">&rarr; {curr} </Link>
+                                                <Link href={`#${curr.url}`} className="text-gray-400" onClick={() => scroll(curr.url)}>&rarr; {curr.name} </Link>
                                             </li>
                                         )
                                     })
@@ -36,7 +61,7 @@ const Footer = () => {
                                     services.map((curr) => {
                                         return (
                                             <li key={curr.id}>
-                                                <Link href="/" className="text-gray-400">&rarr; {curr.name}</Link>
+                                                <Link href="#services" onClick={() => scroll("services")}  className="text-gray-400">&rarr; {curr.name}</Link>
                                             </li>
                                         )
                                     })

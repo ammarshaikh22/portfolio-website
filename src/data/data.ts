@@ -1,4 +1,4 @@
-import { ResumeData, Services, Skills, Contact } from "@/types/Interface"
+import { ResumeData, Services, Skills, Contact, Menu } from "@/types/Interface"
 
 export const data: ResumeData[] = [
     {
@@ -172,7 +172,7 @@ export const contact: Contact[] = [
 ]
 
 
-export const menu = [
+export const menu: Menu[] = [
     {
         name: "Home",
         url: "home"
