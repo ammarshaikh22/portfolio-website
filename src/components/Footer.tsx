@@ -30,7 +30,7 @@ const Footer = () => {
         requestAnimationFrame(animateScroll);
     };
     return (
-        <footer className='relative py-24'>
+        <footer className='relative py-14'>
             <div className='max-w-[92%] mx-auto'>
                 <div className='flex flex-col md:flex-row justify-center gap-10 md:gap-14'>
                     <div className="md:w-[25%]">
