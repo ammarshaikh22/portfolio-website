@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { menu } from "@/data/data";
+import { ClassNames } from "@emotion/react";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,13 +45,13 @@ const Header = () => {
     ) => {
         e.preventDefault();
         scroll(url);
-        setIsOpen(false); // Close the menu on mobile
+        setIsOpen(false); 
     };
     useEffect(() => {
         const sections = document.querySelectorAll("section");
         const options = {
             root: null,
-            threshold: 0.3, // Adjust this value as needed
+            threshold: 0.3,
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -90,7 +91,7 @@ const Header = () => {
                                         href={`#${curr.url}`}
                                         onClick={(e) => handleScroll(e, curr.url)}
                                         className={`text-base ${activeSection === curr.url
-                                            ? "text-yellow-500 after:content-[''] after:absolute after:bottom-0 after:top-7 after:left-0 after:right-2 after:mx-auto after:w-[100%] after:h-1 "
+                                            ? "text-yellow-500"
                                             : "text-white"
                                             } hover:text-yellow-500 hover:after:content-[''] hover:after:top-7 hover:after:left-0 hover:after:right-2 hover:after:bottom-0 hover:after:mx-auto hover:after:w-[100%] hover:after:h-1 hover:after:bg-yellow-500 hover:after:absolute`}
                                     >

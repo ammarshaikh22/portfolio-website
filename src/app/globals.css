@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 @layer base {
   :root {
     --background: 0 0 0;
@@ -68,10 +69,12 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 .service-card {
   position: relative;
 }
@@ -84,11 +87,40 @@
   margin: 0 auto;
   left: 0;
   width: 44px;
-  height: 2px; 
-  background-color: #fbbf24; /* Default color */
+  height: 2px;
+  background-color: #fbbf24;
+  /* Default color */
   transition: background-color 0.5s ease-in-out;
 }
 
 .service-card:hover::after {
-  background-color: #000; /* Color on hover */
+  background-color: #000;
+  /* Color on hover */
+}
+
+.slide-top {
+  -webkit-animation: slide-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
+          animation: slide-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }

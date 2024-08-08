@@ -10,7 +10,7 @@ const AboutMe = () => {
                     <div className='w-[70%] md:block hidden'>
                         <Image src={aboutImg} alt='img' />
                     </div>
-                    <div className='w-full md:w-full  relative'>
+                    <div className='w-full md:w-full relative'>
                         <h2 className='z-[-1] absolute top-0 left-0 right-0 md:text-8xl text-trans'>About</h2>
                         <h2 className='text-3xl md:text-5xl'>About Me</h2>
                         <p className='mt-6 md:mt-10 text-gray-400'>Hello! I am Front End Developer. I have one year of experience in Web Development.</p>
